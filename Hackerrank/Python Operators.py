@@ -1,6 +1,5 @@
-a = 3
-b = 2
+if __name__ == '__main__':
+    a = int(input())
+    b = int(input())
 
-print(a+b) #5
-print(a-b) #1
-print(a*b) #6
+print((a + b), (a - b), (a * b), sep='\n')

@@ -5,9 +5,11 @@
 # 1
 # 1.33333333333
 
-a = 4 // 3
-b = 4 / 3
-print(a)
-print(b)
+if __name__ == '__main__':
+    a = int(input())
+    b = int(input())
+
+print(a // b, a / b, sep='\n')
+
 
 
