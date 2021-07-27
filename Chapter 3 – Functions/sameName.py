@@ -1,6 +1,7 @@
 def spam():
     global eggs
-    eggs= 'spam'
+    eggs = 'spam'
+
 
 eggs = ' global'
 spam()
