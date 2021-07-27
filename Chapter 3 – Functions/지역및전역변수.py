@@ -21,7 +21,11 @@ def spam():
 
 def bacon():
     ham = 101  # 지역변수
-    eggs = 0
+    tomato()
+    eggs = 0 # 지역변수
+
+def tomato():
+    eggs = 1
 
 
 spam()
