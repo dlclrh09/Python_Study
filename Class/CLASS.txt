@@ -1,0 +1,110 @@
+클래스 class 알기
+파이썬은 강한 객체지향성을 추구하고 있다.
+구조화된 형태의 데이터를 구성하는 기본방식과 확장하고 활용하는 방법을 규정.
+효율적으로 처리하기 위해 유형별로 분류하는 형태
+
+예를들어, Korea, Cuba, Turkey 의 공통점이 'Country'
+그러면 'Country'가 위 3개의 클래스가 될 수 있다.
+
+또 여기서 나중에 'USA'라는 국가가 추가되면 'USA'도 'Country'라는 클래스에 들어갈 수 있습니다.
+
+어떠한 객체(인스턴스)를 클래스에 추가를 하고 싶으면
+객체(인스턴스) = 클래스()로 코드를 써주면 된다.
+
+class country: #class의 이름은 country
+
+Korea = country()
+Cuba = country()
+Turkey = country()
+
+country의 객체들이 무엇을 할 것인지 함수로 정의를 해야합니다!
+그 무엇을 하는지는 method(내부 함수) 라는 함수로 정의 해야합니다. (파이썬 함수 정의는 def 활용)
+
+class country: #country는 클래스 이름
+    def export(self): #Export은 메소드 이름 / Export을 할거야!
+        print ("country exports.") #country는 exports를 한다.
+
+Korea = country()
+Korea.export() #country exports. 출력
+
+#method에 입력될 객체를 받는 매개변수를 self로 정의를 해줘야 호출할때 자동입력이 되기 때문에
+입력을 해줘야 하며, 정의하지 않으면 자동적으로 인스턴스를 받을 변수가 없어서 에러가 뜹니다.
+
+우리가 이해해야할 부분은
+Korea라는 객체(인스턴스)가 country라는 클래스에 들어가게 되서 export를 하면
+Country exports가 출력되어야 합니다.
+
+즉, 클래스에 있는 객체(인스턴스)에게 메소드를 실행하려면
+객체, 매소드(내부 함수)(self, first, last, … ) 의 형식으로 코드를 작성해 주시면 됩니다.
+
+
+init, self 알기
+
+#self: 객체 자신을 나타내는 파라미터
+
+class cafe: #cafe클래스 만든다.
+    coffee=cafe #coffee를 cafe클래스에 넣는다
+
+# 클래스를 자동으로 자동으로 함수에 실행하고 싶으면 생성자를 만들면 됩니다. 여기서는 init을 사용합니다.
+#여기서는 coldbrew라는 클래스를 불러올 때마다 "스타벅스는 coldbrew가 최고입니다."라는 문자열이 출력됩니다.
+#initialize의 약자 / 사용하려면 def 앞에 한칸 띄고 앞, 뒤에 언더바 두개씩 / self는 자기자신을 받는다.
+
+class cafe:
+    def __init__(self): #initialize의 약자 / self는 자기자신을 받는다.
+       print("스타벅스는 coldbrew가 최고입니다.")
+
+coldbrew = cafe()
+
+# __init__은 Cafe 클래스의 객체(인스턴스)를 지정하는 함수이고,
+Cafe의 name, taste, price를 받아 인스턴스의 속성을 self.name, taste, price로 설정합니다.
+다음으로 name, taste, price를 각 "coldbrew","bitter", 5000인 임의의 객체 coldbrew를 생성하고 
+클래스를 적용해줍니다. 그렇다면 각 coldbrew bitter 5000로 출력됩니다.
+
+#self의 역할
+
+class Cafe:
+    def __init__(self, name: str, taste: str, price: int):  #init 생성자
+        self.name = name #메소드 수행문
+        self.taste = taste
+        self.price = price
+
+coldbrew = Cafe("coldbrew","bitter",  5000)
+print(coldbrew.name, coldbrew.taste, coldbrew.price)
+
+
+상속 알기
+#클래스간의 관계를 좀 더 디테일하게 정의할 수 있습니다.
+#부모클래스가 자식클래스에게 매개변수와 메소드를 물려주는 것을 상속이라고 합니다.
+
+class cafe: #부모클래스
+    def __init__(self):
+        print("스타벅스는 coldbrew가 최고입니다.")
+
+class cafe2(cafe): #자식클래스
+    def __init__(self):
+        print("스타벅스는 americano도 맛있습니다.")
+
+americano = cafe2()
+
+#americano를 cafe2에 넣으면 "스타벅스는 americano도 맛있습니다." 만 출력이 되고 cafe의 함수는 출력되지 않습니다.
+이는 부모클래스의 매개변수와 메소드를 상속받아 자식클래스 Cafe2가 때문에 Cafe는 출력되지 않는 것 입니다.
+
+
+# 자식클래스 def __init__()에서 부모클래스 def __init__()을 호출할때 super().__init__()을 사용하게 되면
+자식클래스의 메소드가 초기화되면서 부모클래스의 메소드를 상속 받게 됩니다.
+
+class cafe: #부모클래스
+    def __init__(self):
+        print("스타벅스는 coldbrew가 최고입니다.")
+
+class cafe2(cafe): #자식클래스
+    def __init__(self):
+        super().__init__()
+
+americano = cafe2()
+
+
+
+
+
+
