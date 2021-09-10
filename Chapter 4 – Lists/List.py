@@ -3,16 +3,10 @@
 # 문자열은 '' 따옴표 안에 넣어서 표시
 
 spam = ['cat', 'bat', 'bat', 'elephant']
-spam[0]
-'cat'
-spam[1]
-'bat'
-spam[2]
-'elephant'
-spam[3]
+print(spam[0])
+print(spam[1])
+print(spam[2])
+print(spam[3])
 spam=['cat', 'bat', 'bat', 'elephant'][3]
-'elephant'
-'Hello'+spam[0]
-'Hello cat'
-'The'+spam[1]+'ate the'+spam[0]
-'The bat are the cat'
+print('Hello'+spam[0])
+print('The'+spam[1]+'ate the'+spam[0])
