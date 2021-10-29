@@ -5,7 +5,7 @@ pima = pd.read_csv('pima2.csv', usecols=['diabetes', 'age'])
 
 group = {
     '20to30': pima[pima['age'] >= 20][pima['age'] < 31],
-    '31to40': pima[pima['age'] >= 31][pima['age'] < 40],
+    '31to40': pima[pima['age'] >= 31][pima['age'] < 41],
     '41to50': pima[pima['age'] >= 41][pima['age'] < 51],
     '50plus': pima[pima['age'] >= 51]
 }
